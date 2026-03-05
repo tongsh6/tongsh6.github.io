@@ -27,7 +27,7 @@ permalink: /about/
 
 - GitHub：[https://github.com/tongsh6](https://github.com/tongsh6)
 - Zhihu：[https://www.zhihu.com/people/tsloong](https://www.zhihu.com/people/tsloong)
-- 邮箱：tongsh6 [at] gmail.com
+- 邮箱：已隐藏（点击右侧按钮复制）
   <button id="copy-email-btn" type="button" style="margin-left:8px;">点击复制</button>
   <span id="copy-email-msg" style="margin-left:6px;color:#2e7d32;"></span>
 
