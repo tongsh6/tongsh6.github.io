@@ -4,7 +4,7 @@
 
 `.github/workflows/ci.yml`
 
-该工作流会在每次 `push main` 和 `pull_request` 时执行 `bundle exec jekyll build`，用于提前发现构建问题。
+该工作流会在每次 `push main/develop` 和 `pull_request` 时执行 `bundle exec jekyll build`，用于提前发现构建问题。
 
 ## 常见操作
 
