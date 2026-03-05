@@ -1,1 +1,48 @@
-theme: jekyll-theme-slate
+title: "Tongsh6 的个人博客"
+description: "记录技术、项目与生活的可复用笔记"
+author:
+  name: "Tongsh6"
+
+# GitHub Pages 用户站点通常为 https://<username>.github.io
+url: "https://tongsh6.github.io"
+baseurl: ""
+
+# 切换为更适合写博客的 GitHub Pages 官方主题
+theme: minima
+
+timezone: Asia/Shanghai
+lang: zh-CN
+
+# 避免把 README 等文档页面误编进站点
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# 顶部导航（minima 会自动把这些页面显示到导航栏）
+header_pages:
+  - about.md
+  - categories.md
+  - tags.md
+
+minima:
+  date_format: "%Y-%m-%d"
+  social_links:
+    - { platform: github,  user_url: "https://github.com/tongsh6" }
+    # 取消注释并替换为你的真实地址（不想展示就删掉）
+    # - { platform: juejin,  user_url: "https://juejin.cn/user/你的ID" }
+    - { platform: zhihu,   user_url: "https://www.zhihu.com/people/tsloong" }
+    # - { platform: weibo,   user_url: "https://weibo.com/你的ID" }
+    # - { platform: twitter, user_url: "https://twitter.com/你的ID" }
+    # - { platform: linkedin, user_url: "https://www.linkedin.com/in/你的ID/" }
+
+# 可选：在 SEO/站点信息里展示邮箱（不想公开就留空或删除）
+email: "tongsh6@gmail.com"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 让链接更“博客化”，同时对 GitHub Pages 友好
+permalink: /:categories/:year/:month/:day/:title/
