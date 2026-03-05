@@ -25,12 +25,12 @@ permalink: /about/
 
 ## 联系方式（可选）
 
-- GitHub：`https://github.com/tongsh6`
-- Zhihu：`https://www.zhihu.com/people/tsloong`
-- 邮箱：`tongsh6@gmail.com`
+- GitHub：[https://github.com/tongsh6](https://github.com/tongsh6)
+- Zhihu：[https://www.zhihu.com/people/tsloong](https://www.zhihu.com/people/tsloong)
+- 邮箱：`tongsh6 [at] gmail.com`
 
 ## 关于这个博客
 
 - 更新频率：随缘但尽量持续
 - 文章偏好：可复用的笔记、可落地的方法、踩坑与复盘
-- RSS：`/feed.xml`
+- RSS：[订阅地址](/feed.xml)
