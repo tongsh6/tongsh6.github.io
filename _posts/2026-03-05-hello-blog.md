@@ -35,7 +35,7 @@ tags: [博客, Jekyll, GitHub Pages]
 3）发布草稿（把 `published: false` 变成 `true`，并同步日期）：
 
 ```powershell
-.\publish-post.ps1 -PostFile "_posts\\YYYY-MM-DD-xxx.md"
+.\publish-post.ps1 -PostFile "YYYY-MM-DD-xxx.md"
 ```
 
 4）提交并推送到 `main`，GitHub Pages 会自动构建并上线：

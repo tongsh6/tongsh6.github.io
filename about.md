@@ -4,32 +4,30 @@ title: 关于我
 permalink: /about/
 ---
 
-你好，我是 **Tongsh6**。
-
-这是一份可直接替换的简介模板（把中括号里的内容改成你的真实信息即可）。
+你好，我是 **Tongsh6**，这里记录技术学习、项目实践和阶段性复盘。
 
 ## 我在做什么
 
-- [一句话介绍你的当前状态，例如：后端工程师 / 学生 / 独立开发者]
-- [你现在主要在做/研究的方向]
+- 持续构建个人知识库，沉淀可复用的技术方法
+- 关注工程效率、工具链优化和 AI 在实际场景的落地
 
 ## 我关注的方向
 
-- [方向 1：例如：工程效率 / 分布式 / AI 应用]
-- [方向 2：例如：前端工程化 / 数据分析]
-- [方向 3：例如：产品与体验]
+- 工程效率与自动化
+- 后端与系统设计
+- AI 应用与产品化实践
 
 ## 常用技术栈
 
-- 语言：[例如：Java / Go / TypeScript / Python]
-- 框架/平台：[例如：Spring / Node.js / Docker / K8s]
-- 工具：[例如：Git / VS Code / Obsidian / Notion]
+- 语言：Java、TypeScript、Python
+- 平台/框架：Spring、Node.js、Docker
+- 工具：Git、VS Code、Obsidian
 
 ## 联系方式（可选）
 
 - GitHub：`https://github.com/tongsh6`
-- 邮箱：[你的邮箱]
-- 其他：[掘金/知乎/公众号/微博等链接]
+- Zhihu：`https://www.zhihu.com/people/tsloong`
+- 邮箱：`tongsh6@gmail.com`
 
 ## 关于这个博客
 

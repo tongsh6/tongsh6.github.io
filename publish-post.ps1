@@ -9,9 +9,28 @@ $repoRoot = $PSScriptRoot
 $postsDir = Join-Path $repoRoot "_posts"
 if (-not (Test-Path $postsDir)) { throw "未找到目录：$postsDir" }
 
-$postPath = if ([System.IO.Path]::IsPathRooted($PostFile)) { $PostFile } else { Join-Path $postsDir $PostFile }
+$postPath = $null
+if ([System.IO.Path]::IsPathRooted($PostFile)) {
+  $postPath = $PostFile
+} else {
+  $normalized = $PostFile -replace "/", "\"
+  $normalized = $normalized.Trim()
+  $normalized = $normalized -replace "^[.\\]+", ""
+
+  # 兼容两种常见写法：
+  # 1) 仅文件名：2026-03-05-hello.md
+  # 2) 含目录前缀：_posts\2026-03-05-hello.md
+  if ($normalized -match "^_posts\\(.+)$") {
+    $postPath = Join-Path $postsDir $Matches[1]
+  } elseif (Test-Path (Join-Path $repoRoot $normalized)) {
+    $postPath = Join-Path $repoRoot $normalized
+  } else {
+    $postPath = Join-Path $postsDir $normalized
+  }
+}
+
 if (-not (Test-Path $postPath)) {
-  throw "未找到文章文件：$postPath"
+  throw "未找到文章文件：$postPath。可用示例：-PostFile ""2026-03-05-hello.md"" 或 -PostFile ""_posts\\2026-03-05-hello.md"""
 }
 
 $text = Get-Content -Raw -Path $postPath -Encoding UTF8
@@ -56,4 +75,3 @@ if ($targetPath -ne $postPath) {
 } else {
   Write-Host "已发布：$postPath"
 }
-

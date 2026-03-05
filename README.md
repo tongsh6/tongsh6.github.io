@@ -29,10 +29,12 @@
 写完后发布：
 
 ```powershell
-.\publish-post.ps1 -PostFile "_posts\\YYYY-MM-DD-xxx.md"
+.\publish-post.ps1 -PostFile "YYYY-MM-DD-xxx.md"
 ```
 
 发布完成后提交并推送到 `main`，GitHub Pages 会自动上线。
+
+说明：脚本同时兼容 `"_posts\\YYYY-MM-DD-xxx.md"` 这种带目录前缀的写法。
 
 ### 方式 B：手动创建（不依赖脚本）
 
@@ -72,7 +74,9 @@ tags: [Jekyll, GitHub Pages]
 
 ## 本地预览（可选）
 
-如果你希望在本地先预览再发布，可以在仓库根目录执行：
+如果你希望在本地先预览再发布，需要先安装 Ruby（建议 3.x）和 Bundler。
+
+安装完成后，在仓库根目录执行：
 
 ```bash
 bundle install
