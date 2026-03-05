@@ -100,7 +100,7 @@ git commit -m "chore(post): 删除 xxx"
 打开 `_config.yml`，把这些内容替换成你的真实信息：
 
 - `title`、`description`
-- `author.name`
+- `author`
 - `minima.social_links`（可加你的掘金/知乎/微博等链接）
 
 ## 本地预览（可选）

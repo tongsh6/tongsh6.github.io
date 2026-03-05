@@ -27,7 +27,7 @@ permalink: /about/
 
 - GitHub：[https://github.com/tongsh6](https://github.com/tongsh6)
 - Zhihu：[https://www.zhihu.com/people/tsloong](https://www.zhihu.com/people/tsloong)
-- 邮箱：`tongsh6 [at] gmail.com`
+- 邮箱：tongsh6 [at] gmail.com
 
 ## 关于这个博客
 
