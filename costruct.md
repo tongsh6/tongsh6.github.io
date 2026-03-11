@@ -38,6 +38,9 @@ CoStruct 是一个方法论与文档仓库。
 7. `验证框架`：看结果如何被检查，以及系统如何回头纠偏  
    <https://github.com/tongsh6/CoStruct/blob/main/docs/validation-framework.md>
 
+8. `沉淀机制`：看哪些东西应该留下，以及如何形成复利  
+   <https://github.com/tongsh6/CoStruct/blob/main/docs/accumulation-mechanism.md>
+
 ## 这个项目当前在处理什么
 
 目前 CoStruct 主要围绕三件事展开：
@@ -81,3 +84,4 @@ CoStruct 现在仍然处于很早的阶段。
 - 状态识别与协作模式：<https://github.com/tongsh6/CoStruct/blob/main/docs/state-recognition-and-collaboration-modes.md>
 - 干预深度：<https://github.com/tongsh6/CoStruct/blob/main/docs/intervention-depth.md>
 - 验证框架：<https://github.com/tongsh6/CoStruct/blob/main/docs/validation-framework.md>
+- 沉淀机制：<https://github.com/tongsh6/CoStruct/blob/main/docs/accumulation-mechanism.md>
