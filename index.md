@@ -14,5 +14,6 @@ title: 首页
 你可以从这些入口开始逛：
 
 - [关于我]({{ "/about/" | relative_url }})
+- [CoStruct]({{ "/costruct/" | relative_url }})
 - [分类]({{ "/categories/" | relative_url }}) / [标签]({{ "/tags/" | relative_url }})
 - [RSS 订阅]({{ "/feed.xml" | relative_url }})
