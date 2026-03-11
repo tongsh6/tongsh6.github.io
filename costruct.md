@@ -29,6 +29,9 @@ CoStruct 是一个方法论与文档仓库。
 4. `AI 使用方法论 V1 总纲`：看现在已经立住的母结构  
    <https://github.com/tongsh6/CoStruct/blob/main/docs/ai-usage-methodology-v1.md>
 
+5. `状态识别与协作模式`：看第一根主柱如何往下展开  
+   <https://github.com/tongsh6/CoStruct/blob/main/docs/state-recognition-and-collaboration-modes.md>
+
 ## 这个项目当前在处理什么
 
 目前 CoStruct 主要围绕三件事展开：
@@ -69,3 +72,4 @@ CoStruct 现在仍然处于很早的阶段。
 - 首发文章：<https://tongsh6.github.io/%E9%A1%B9%E7%9B%AE/2026/03/12/costruct-launch/>
 - 文档索引：<https://github.com/tongsh6/CoStruct/tree/main/docs>
 - 总纲原文：<https://github.com/tongsh6/CoStruct/blob/main/docs/ai-usage-methodology-v1.md>
+- 状态识别与协作模式：<https://github.com/tongsh6/CoStruct/blob/main/docs/state-recognition-and-collaboration-modes.md>
