@@ -18,6 +18,13 @@ tags: [AI, 方法论, CoStruct, 人机协作]
 
 > AI 使用不是技巧问题，而是协作结构问题。
 
+如果你想直接看入口，不想先通读全文，可以先走这里：
+
+- 项目页：<https://tongsh6.github.io/costruct/>
+- 仓库首页：<https://github.com/tongsh6/CoStruct>
+- 文档入口：<https://github.com/tongsh6/CoStruct/tree/main/docs>
+- `AI 使用方法论 V1 总纲`：<https://github.com/tongsh6/CoStruct/blob/main/docs/ai-usage-methodology-v1.md>
+
 ## TL;DR
 
 如果只想把 AI 用得更顺手，学几个 prompt 模板、记几个工具名字，通常就够了。
@@ -205,3 +212,4 @@ CoStruct 现在还很早。
 ## 参考
 
 - CoStruct 仓库：<https://github.com/tongsh6/CoStruct>
+- CoStruct 项目页：<https://tongsh6.github.io/costruct/>
