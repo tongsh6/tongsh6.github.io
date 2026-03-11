@@ -32,6 +32,9 @@ CoStruct 是一个方法论与文档仓库。
 5. `状态识别与协作模式`：看第一根主柱如何往下展开  
    <https://github.com/tongsh6/CoStruct/blob/main/docs/state-recognition-and-collaboration-modes.md>
 
+6. `干预深度`：看入口之后，协作控制如何建立  
+   <https://github.com/tongsh6/CoStruct/blob/main/docs/intervention-depth.md>
+
 ## 这个项目当前在处理什么
 
 目前 CoStruct 主要围绕三件事展开：
@@ -73,3 +76,4 @@ CoStruct 现在仍然处于很早的阶段。
 - 文档索引：<https://github.com/tongsh6/CoStruct/tree/main/docs>
 - 总纲原文：<https://github.com/tongsh6/CoStruct/blob/main/docs/ai-usage-methodology-v1.md>
 - 状态识别与协作模式：<https://github.com/tongsh6/CoStruct/blob/main/docs/state-recognition-and-collaboration-modes.md>
+- 干预深度：<https://github.com/tongsh6/CoStruct/blob/main/docs/intervention-depth.md>
