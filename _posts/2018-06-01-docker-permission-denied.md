@@ -16,5 +16,3 @@ source_url: "https://blog.csdn.net/tongsh6/article/details/80538121"
 sudo chmod -R 777 /home/xxx
 
 ```
-
-[我的博客](https://blog.tongshuanglong.com)
