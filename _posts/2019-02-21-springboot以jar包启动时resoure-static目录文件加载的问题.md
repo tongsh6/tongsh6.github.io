@@ -55,5 +55,3 @@ try (InputStream inputStream = resource.getInputStream()) {
 ## 结论
 
 如果资源文件位于 `resources/static` 或其他 classpath 目录下，后台代码读取时优先用“类路径资源”的思路，不要把它当成普通磁盘文件处理。
-
-[博客](http://blog.tongshuanglong.com/)

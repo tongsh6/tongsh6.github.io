@@ -80,5 +80,3 @@ protected String[] tokenizePath(String path) {
 ## 结论
 
 这个问题本质上不是 Spring Boot 升级“随机出 bug”，而是旧代码里原本就隐藏了一个路径尾部空格的问题。旧版本因为默认裁剪空格而“侥幸可用”，升级后行为更严格，问题才被暴露出来。
-
-[博客](http://blog.tongshuanglong.com/)
