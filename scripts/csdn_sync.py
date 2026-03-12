@@ -536,6 +536,24 @@ def normalize_markdown(text: str, *, title: str | None = None) -> str:
     value = re.sub(r"(?m)^#### 目录\s*\n+(?:[ \t]*[-*][^\n]*\n)+", "", value)
     value = re.sub(r"(?m)^[ \t]+$", "", value)
 
+    # Fix markdownify's incorrect escaping in code blocks and CSDN's double spacing
+    def fix_code_block(match):
+        code = match.group(0)
+        code = code.replace(r"\*", "*").replace(r"\_", "_").replace(r"\[", "[").replace(r"\]", "]")
+        lines = code.split("\n")
+        empty_count = sum(1 for line in lines if line.strip() == "")
+        if len(lines) > 6 and empty_count >= (len(lines) - 2) / 2:
+            new_lines = []
+            for i, line in enumerate(lines):
+                if line.strip() == "" and i > 0 and i < len(lines) - 1:
+                    if lines[i-1].strip() != "":
+                        continue
+                new_lines.append(line)
+            code = "\n".join(new_lines)
+        return code
+
+    value = re.sub(r"```.*?```", fix_code_block, value, flags=re.DOTALL)
+
     if title:
         escaped_title = re.escape(title.strip())
         value = re.sub(rf"(?ms)^\s*#+\s*{escaped_title}\s*\n+", "", value, count=1)
