@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="post-wrapper">
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          {{ page.date | date: date_format }}
+        </time>
+        {%- if page.author -%}
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        {%- endif -%}
+      </p>
+    </header>
+
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
+
+  <!-- Table of Contents Sidebar -->
+  <aside class="post-sidebar">
+    <nav class="toc-container" aria-label="Table of contents">
+      <h2 class="toc-title">目录</h2>
+      <div class="js-toc"></div>
+    </nav>
+  </aside>
+</div>
+
+<!-- Tocbot Script and Style -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.css" integrity="sha512-MiKzJ1SHUjeQpWOIKdj1LYmEdnPF076Zeq7en/98oFIfomw5MEbqJ2RhRl+4WHo1ciJyFjFigtgKzXOO50Psrg==" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.min.js" integrity="sha512-aeQPIoprk35kvJYUFH4nhvm+ASgaUHHBfJQLEfizXatcdcrWFIzNNpG/lf70ePbB1cplRQ2I5/XyMLMZJHFRzQ==" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.tocbot && typeof window.tocbot.init === 'function') {
+      window.tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.post-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+        // How many heading levels should not be collapsed.
+        collapseDepth: 3,
+        orderedList: false,
+        scrollSmooth: true,
+        headingsOffset: 100,
+        scrollSmoothOffset: -100
+      });
+    } else {
+      if (window.console && typeof window.console.warn === 'function') {
+        console.warn('Tocbot is not available; skipping table of contents initialization.');
+      }
+    }
+  });
+</script>
