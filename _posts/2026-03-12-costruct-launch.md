@@ -193,11 +193,14 @@ CoStruct 现在还很早。
 
 我觉得这个项目需要两个空间：
 
-- GitHub 仓库：负责沉淀结构
-- 博客：负责对外表达
+- 方法论源仓库 `tongsh6/CoStruct`：负责沉淀结构、文档与后续版本
+- 发布仓库 `tongsh6/tongsh6.github.io`：负责项目页、文章和对外表达
 
 仓库适合长出文档、协议、模板和后续版本。
 博客更适合把主命题讲清楚，把“为什么是这套结构”讲出去。
+
+所以这篇文章属于发布层，  
+而 CoStruct 的方法论源文件和后续演化，会持续维护在独立的 CoStruct 仓库里。
 
 对我来说，这篇文章就是这个项目真正的公开起点。
 
@@ -212,4 +215,5 @@ CoStruct 现在还很早。
 ## 参考
 
 - CoStruct 仓库：<https://github.com/tongsh6/CoStruct>
+- 博客 / 站点仓库：<https://github.com/tongsh6/tongsh6.github.io>
 - CoStruct 项目页：<https://tongsh6.github.io/costruct/>

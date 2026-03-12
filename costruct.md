@@ -55,11 +55,14 @@ CoStruct 是一个方法论与文档仓库。
 
 这个项目有两个空间：
 
-- GitHub 仓库：负责沉淀结构、文档、协议和后续版本
-- 博客：负责对外表达、项目叙事和阶段性公开说明
+- 方法论源仓库 `tongsh6/CoStruct`：负责沉淀结构、文档、协议和后续版本
+- 发布仓库 `tongsh6/tongsh6.github.io`：负责项目页、文章和阶段性公开说明
 
 如果你想看“为什么是这套结构”，先看博客。
 如果你想看“这套结构现在具体写成什么样”，回到仓库。
+
+也就是说，这个页面本身属于发布层，  
+真正持续演化的方法论文档仍以 CoStruct 仓库为准。
 
 ## 当前状态
 
@@ -78,6 +81,7 @@ CoStruct 现在仍然处于很早的阶段。
 ## 入口链接
 
 - 项目仓库：<https://github.com/tongsh6/CoStruct>
+- 发布仓库：<https://github.com/tongsh6/tongsh6.github.io>
 - 首发文章：<https://tongsh6.github.io/%E9%A1%B9%E7%9B%AE/2026/03/12/costruct-launch/>
 - 文档索引：<https://github.com/tongsh6/CoStruct/tree/main/docs>
 - 总纲原文：<https://github.com/tongsh6/CoStruct/blob/main/docs/ai-usage-methodology-v1.md>
