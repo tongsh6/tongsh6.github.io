@@ -26,33 +26,39 @@ layout: default
 
   <!-- Table of Contents Sidebar -->
   <aside class="post-sidebar">
-    <div class="toc-container">
-      <div class="toc-title">目录</div>
+    <nav class="toc-container" aria-label="Table of contents">
+      <h2 class="toc-title">目录</h2>
       <div class="js-toc"></div>
-    </div>
+    </nav>
   </aside>
 </div>
 
 <!-- Tocbot Script and Style -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.css" integrity="sha512-MiKzJ1SHUjeQpWOIKdj1LYmEdnPF076Zeq7en/98oFIfomw5MEbqJ2RhRl+4WHo1ciJyFjFigtgKzXOO50Psrg==" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.min.js" integrity="sha512-aeQPIoprk35kvJYUFH4nhvm+ASgaUHHBfJQLEfizXatcdcrWFIzNNpG/lf70ePbB1cplRQ2I5/XyMLMZJHFRzQ==" crossorigin="anonymous"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    tocbot.init({
-      // Where to render the table of contents.
-      tocSelector: '.js-toc',
-      // Where to grab the headings to build the table of contents.
-      contentSelector: '.post-content',
-      // Which headings to grab inside of the contentSelector element.
-      headingSelector: 'h1, h2, h3',
-      // For headings inside relative or absolute positioned containers within content.
-      hasInnerContainers: true,
-      // How many heading levels should not be collapsed.
-      collapseDepth: 3,
-      orderedList: false,
-      scrollSmooth: true,
-      headingsOffset: 100,
-      scrollSmoothOffset: -100
-    });
+    if (window.tocbot && typeof window.tocbot.init === 'function') {
+      window.tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.post-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+        // How many heading levels should not be collapsed.
+        collapseDepth: 3,
+        orderedList: false,
+        scrollSmooth: true,
+        headingsOffset: 100,
+        scrollSmoothOffset: -100
+      });
+    } else {
+      if (window.console && typeof window.console.warn === 'function') {
+        console.warn('Tocbot is not available; skipping table of contents initialization.');
+      }
+    }
   });
 </script>
