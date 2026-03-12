@@ -3,4 +3,10 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
-
+.serena/
+.tmp/
+__pycache__/
+data/csdn-manifest.json
+data/csdn-sync-state.json
+data/csdn-sync-failures.json
+data/csdn-cookie.txt
