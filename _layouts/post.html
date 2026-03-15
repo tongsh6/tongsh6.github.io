@@ -21,6 +21,9 @@ layout: default
       {{ content }}
     </div>
 
+    <!-- Giscus Comments -->
+    <div class="giscus" style="margin-top: 60px;"></div>
+
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   </article>
 
@@ -32,6 +35,9 @@ layout: default
     </nav>
   </aside>
 </div>
+
+{% include post_scripts.html %}
+
 
 <!-- Tocbot Script and Style -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.21.0/tocbot.css" integrity="sha512-MiKzJ1SHUjeQpWOIKdj1LYmEdnPF076Zeq7en/98oFIfomw5MEbqJ2RhRl+4WHo1ciJyFjFigtgKzXOO50Psrg==" crossorigin="anonymous">

@@ -44,6 +44,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
 
 # 让链接更“博客化”，同时对 GitHub Pages 友好
 permalink: /:categories/:year/:month/:day/:title/
+
+paginate: 10
+paginate_path: '/page:num/'

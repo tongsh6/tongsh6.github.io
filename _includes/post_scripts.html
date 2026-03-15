@@ -1,0 +1,60 @@
+<!-- Post content -->
+<div class="post-content e-content" itemprop="articleBody">
+  {{ content }}
+</div>
+
+<!-- Medium Zoom Script for Image Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize medium-zoom on all images within post-content
+    const images = Array.from(document.querySelectorAll('.post-content img'));
+    const zoom = mediumZoom(images, {
+      margin: 24,
+      background: 'rgba(0, 0, 0, 0.9)',
+      scrollOffset: 0,
+    });
+  });
+</script>
+
+<!-- Copy Code Button Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all pre elements
+    var blocks = document.querySelectorAll('pre.highlight');
+    
+    blocks.forEach(function(block) {
+      // Create a button
+      var button = document.createElement('button');
+      button.className = 'copy-code-btn';
+      button.innerText = 'Copy';
+      
+      // Add the button to the parent figure (or wrapper)
+      var wrapper = block.parentElement;
+      // Make sure the wrapper is relatively positioned
+      if(wrapper.tagName.toLowerCase() === 'figure') {
+        wrapper.style.position = 'relative';
+        wrapper.appendChild(button);
+      } else {
+        block.style.position = 'relative';
+        block.appendChild(button);
+      }
+
+      button.addEventListener('click', function() {
+        var code = block.querySelector('code');
+        var text = code ? code.innerText : block.innerText;
+        
+        navigator.clipboard.writeText(text).then(function() {
+          button.innerText = 'Copied!';
+          setTimeout(function() {
+            button.innerText = 'Copy';
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy text: ', err);
+          button.innerText = 'Failed';
+        });
+      });
+    });
+  });
+</script>
+<script src="https://giscus.app/client.js"\n        data-repo="tongsh6/tongsh6.github.io"\n        data-repo-id="R_kgDON7uXSA"\n        data-category="Announcements"\n        data-category-id="DIC_kwDON7uXSM4Cm-W2"\n        data-mapping="pathname"\n        data-strict="0"\n        data-reactions-enabled="1"\n        data-emit-metadata="0"\n        data-input-position="bottom"\n        data-theme="dark"\n        data-lang="zh-CN"\n        data-loading="lazy"\n        crossorigin="anonymous"\n        async>\n</script>
