@@ -392,12 +392,18 @@ a {
   font-size: 0.75rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  opacity: 0;
+  opacity: 1;
 }
 
-figure.highlight:hover .copy-code-btn,
-pre:hover .copy-code-btn {
-  opacity: 1;
+@media (hover: hover) {
+  .copy-code-btn {
+    opacity: 0.4;
+  }
+
+  figure.highlight:hover .copy-code-btn,
+  pre:hover .copy-code-btn {
+    opacity: 1;
+  }
 }
 
 .copy-code-btn:hover {
