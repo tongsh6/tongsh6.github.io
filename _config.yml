@@ -19,6 +19,12 @@ exclude:
   - Gemfile.lock
   - vendor
   - docs/
+  - scripts/
+  - new-post.ps1
+  - publish-post.ps1
+  - CI_SETUP.md
+  - POST_TEMPLATE.md
+  - "*.ps1"
 
 # 顶部导航（minima 会自动把这些页面显示到导航栏）
 header_pages:
