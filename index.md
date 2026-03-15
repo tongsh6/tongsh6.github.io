@@ -13,9 +13,5 @@ pagination:
 - 项目笔记与复盘
 - 读书/生活随记（随缘）
 
-你可以从这些入口开始逛：
-
-- [关于我]({{ "/about/" | relative_url }})
-- [CoStruct]({{ "/costruct/" | relative_url }})
-- [分类]({{ "/categories/" | relative_url }}) / [标签]({{ "/tags/" | relative_url }})
-- [RSS 订阅]({{ "/feed.xml" | relative_url }})
+欢迎来到我的博客！这里记录技术思考与项目实践。
+可通过顶部导航浏览分类与标签，或订阅 [RSS]({{ "/feed.xml" | relative_url }}) 获取更新。
