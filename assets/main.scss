@@ -659,12 +659,21 @@ button.menu-icon {
   border: none;
   cursor: pointer;
   padding: 0;
-  line-height: 0;
   color: inherit;
+  display: none; // 默认桌面端不显示（与 Minima 原 label 行为一致）
 
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  @include media-query($on-palm) {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    line-height: 0;
+    z-index: 2;
   }
 }
