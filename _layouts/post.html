@@ -12,7 +12,7 @@ layout: default
           {{ page.date | date: date_format }}
         </time>
         {%- if page.last_modified_at -%}
-          <span class="post-updated">• 更新于 {{ page.last_modified_at | date: "%Y-%m-%d" }}</span>
+          <time class="post-updated" itemprop="dateModified" datetime="{{ page.last_modified_at | date_to_xmlschema }}">• 更新于 {{ page.last_modified_at | date: "%Y-%m-%d" }}</time>
         {%- endif -%}
         {%- if page.author -%}
           • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
