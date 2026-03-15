@@ -18,6 +18,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - docs/
 
 # 顶部导航（minima 会自动把这些页面显示到导航栏）
 header_pages:
