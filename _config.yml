@@ -48,4 +48,6 @@ plugins:
 
 # 让链接更“博客化”，同时对 GitHub Pages 友好
 permalink: /:categories/:year/:month/:day/:title/
-\npaginate: 10\npaginate_path: '/page:num/'
+
+paginate: 10
+paginate_path: '/page:num/'
