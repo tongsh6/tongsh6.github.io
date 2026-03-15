@@ -6,6 +6,9 @@ gem "minima", "~> 2.5"
 
 gem "kramdown-parser-gfm"
 
+# liquid 4.0.3 calls String#untaint which was removed in Ruby 3.2+
+gem "liquid", ">= 4.0.4"
+
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
