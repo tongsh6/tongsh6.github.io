@@ -392,16 +392,22 @@ a {
   font-size: 0.75rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  opacity: 0;
-}
-
-figure.highlight:hover .copy-code-btn,
-pre:hover .copy-code-btn {
   opacity: 1;
 }
 
-.copy-code-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (hover: hover) {
+  .copy-code-btn {
+    opacity: 0.4;
+  }
+
+  figure.highlight:hover .copy-code-btn,
+  pre:hover .copy-code-btn {
+    opacity: 1;
+  }
+
+  .copy-code-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 
 .medium-zoom-overlay {
@@ -472,6 +478,18 @@ pre:hover .copy-code-btn {
 
 .search-results a:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+.search-result-title {
+  display: block;
+  font-weight: 500;
+}
+
+.search-result-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
 }
 
 .pinned-post {
@@ -601,8 +619,10 @@ html[data-theme="light"] .copy-code-btn {
   border-color: #D4D4D8;
   background: #FFFFFF;
 }
-html[data-theme="light"] .copy-code-btn:hover {
-  background: #F4F4F5;
+@media (hover: hover) {
+  html[data-theme="light"] .copy-code-btn:hover {
+    background: #F4F4F5;
+  }
 }
 html[data-theme="light"] .toc-link {
   color: #71717A;
@@ -619,4 +639,43 @@ html[data-theme="light"] .pinned-post .post-meta {
 }
 html[data-theme="light"] a {
   color: #0070F3;
+}
+html[data-theme="light"] .search-result-date {
+  color: #71717A;
+}
+
+.post-updated {
+  font-size: 0.9em;
+  color: $text-secondary;
+}
+
+html[data-theme="light"] .post-updated {
+  color: #71717A;
+}
+
+// -----------------------------------------------------------------------------
+// Mobile Navigation Button (replaces label[for="nav-trigger"] for accessibility)
+// -----------------------------------------------------------------------------
+button.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  display: none; // 默认桌面端不显示（与 Minima 原 label 行为一致）
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @include media-query($on-palm) {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    line-height: 0;
+    z-index: 2;
+  }
 }
