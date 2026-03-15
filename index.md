@@ -1,6 +1,8 @@
 ---
 layout: home
 title: 首页
+pagination:
+  enabled: true
 ---
 
 欢迎来到我的博客，我是 **Tongsh6**。

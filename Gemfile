@@ -1,8 +1,18 @@
 source "https://rubygems.org"
 
-# 方便本地预览：与 GitHub Pages 的构建环境尽量保持一致
-gem "github-pages", group: :jekyll_plugins
+# 本地预览：独立 Jekyll 环境，支持 jekyll-paginate-v2
+gem "jekyll", "~> 3.9"
+gem "minima", "~> 2.5"
 
-# Ruby 3+ 本地运行可能需要（尤其是 Windows）
+gem "kramdown-parser-gfm"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate-v2"
+end
+
+# Ruby 3+ 本地运行可能需要
 gem "webrick", "~> 1.8"
 

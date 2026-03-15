@@ -40,14 +40,24 @@ minima:
 # 可选：在 SEO/站点信息里展示邮箱（不想公开就留空或删除）
 email: "tongsh6@gmail.com"
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
-# 让链接更“博客化”，同时对 GitHub Pages 友好
+# 让链接更”博客化”，同时对 GitHub Pages 友好
 permalink: /:categories/:year/:month/:day/:title/
 
-paginate: 10
-paginate_path: '/page:num/'
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/page:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
