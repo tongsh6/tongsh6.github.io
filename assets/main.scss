@@ -404,10 +404,10 @@ a {
   pre:hover .copy-code-btn {
     opacity: 1;
   }
-}
 
-.copy-code-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  .copy-code-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 
 .medium-zoom-overlay {
@@ -619,8 +619,10 @@ html[data-theme="light"] .copy-code-btn {
   border-color: #D4D4D8;
   background: #FFFFFF;
 }
-html[data-theme="light"] .copy-code-btn:hover {
-  background: #F4F4F5;
+@media (hover: hover) {
+  html[data-theme="light"] .copy-code-btn:hover {
+    background: #F4F4F5;
+  }
 }
 html[data-theme="light"] .toc-link {
   color: #71717A;

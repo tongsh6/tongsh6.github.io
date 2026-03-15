@@ -7,7 +7,7 @@ layout: null
       "title": "{{ post.title | escape }}",
       "categories": "{{ post.categories | join: ', ' }}",
       "tags": "{{ post.tags | join: ', ' }}",
-      "url": "{{ site.baseurl }}{{ post.url }}",
+      "url": "{{ post.url | relative_url }}",
       "date": "{{ post.date | date: '%Y-%m-%d' }}",
       "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncate: 200 | jsonify }}
     }{% unless forloop.last %},{% endunless %}

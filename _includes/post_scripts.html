@@ -53,7 +53,7 @@
   });
 </script>
 <script>
-  (function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var theme = document.documentElement.dataset.theme || 'dark';
     var script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -77,5 +77,5 @@
     } else {
       console.warn('Giscus: .giscus container not found, comment widget will not load');
     }
-  })();
+  });
 </script>
