@@ -653,6 +653,14 @@ html[data-theme="light"] .post-updated {
   color: #71717A;
 }
 
+html[data-theme="light"] h1,
+html[data-theme="light"] .page-heading {
+  background: linear-gradient(180deg, #09090B 0%, #52525B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 // Light mode syntax highlighting (GitHub Light inspired)
 html[data-theme="light"] .highlight {
   color: #24292e;
