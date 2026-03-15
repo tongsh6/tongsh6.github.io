@@ -94,6 +94,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   kramdown-parser-gfm
+  liquid (>= 4.0.4)
   minima (~> 2.5)
   webrick (~> 1.8)
 
