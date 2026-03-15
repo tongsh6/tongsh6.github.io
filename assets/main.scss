@@ -376,7 +376,22 @@ a {
     opacity: 0;
   }
 }
-.wrapper { max-width: 1400px; margin: 0 auto; padding-right: 30px; padding-left: 30px; }
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  @include media-query($on-palm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 // -----------------------------------------------------------------------------
 // Copy Code Button & Image Zoom Styles
