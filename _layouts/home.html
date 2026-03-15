@@ -27,7 +27,8 @@ layout: default
     {%- endif -%}
     <ul class="post-list">
       
-      <!-- Pinned Posts First -->
+      <!-- Pinned Posts First (only on page 1) -->
+      {%- if site.pagination.enabled == false or paginator.page == 1 -%}
       {%- for post in site.posts -%}
         {%- if post.pinned -%}
           <li class="pinned-post">
@@ -43,6 +44,7 @@ layout: default
           </li>
         {%- endif -%}
       {%- endfor -%}
+      {%- endif -%}
 
       <!-- Regular Posts (excluding pinned to avoid duplication on page 1) -->
       {%- for post in posts -%}
