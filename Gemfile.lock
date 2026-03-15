@@ -90,7 +90,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.9)
   jekyll-feed
-  jekyll-paginate-v2
+  jekyll-paginate-v2 (~> 3.0)
   jekyll-seo-tag
   jekyll-sitemap
   kramdown-parser-gfm

@@ -10,7 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
-  gem "jekyll-paginate-v2"
+  gem "jekyll-paginate-v2", "~> 3.0"
 end
 
 # Ruby 3+ 本地运行可能需要
