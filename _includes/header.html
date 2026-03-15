@@ -37,10 +37,8 @@
 </header>
 
 <script>
-  const currentTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-
   document.addEventListener("DOMContentLoaded", function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     const toggleButton = document.getElementById('theme-toggle');
     const moonIcon = document.getElementById('moon-icon');
     const sunIcon = document.getElementById('sun-icon');
