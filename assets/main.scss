@@ -641,3 +641,12 @@ html[data-theme="light"] a {
 html[data-theme="light"] .search-result-date {
   color: #71717A;
 }
+
+.post-updated {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+html[data-theme="light"] .post-updated {
+  color: #666;
+}
