@@ -89,18 +89,20 @@ layout: default
 </div>
 
 <!-- Simple Jekyll Search Script -->
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"
+        integrity="sha256-jL0uP6XOIL51TNq/iPNgR1D8AJuMzJCV0sVsLxke2Zk="
+        crossorigin="anonymous"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       json: '{{ "/search.json" | relative_url }}',
-      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+      searchResultTemplate: '<li><a href="{url}"><span class="search-result-title">{title}</span><span class="search-result-date">{date}</span></a></li>',
       noResultsText: '<li class="no-results">没有找到相关文章...</li>',
-      limit: 10,
-      fuzzy: false,
-      exclude: ['Welcome']
+      limit: 20,
+      fuzzy: true,
+      exclude: []
     })
   });
 </script>
