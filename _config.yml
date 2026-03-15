@@ -22,7 +22,6 @@ exclude:
 # 顶部导航（minima 会自动把这些页面显示到导航栏）
 header_pages:
   - about.md
-  - costruct.md
   - categories.md
   - tags.md
 
