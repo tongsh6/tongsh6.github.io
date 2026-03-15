@@ -18,6 +18,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - docs/
+  - scripts/
+  - new-post.ps1
+  - publish-post.ps1
+  - CI_SETUP.md
+  - POST_TEMPLATE.md
+  - "*.ps1"
 
 # 顶部导航（minima 会自动把这些页面显示到导航栏）
 header_pages:
@@ -26,6 +33,7 @@ header_pages:
   - tags.md
 
 minima:
+  show_excerpts: true
   date_format: "%Y-%m-%d"
   social_links:
     - { platform: github,  user_url: "https://github.com/tongsh6" }
@@ -39,14 +47,27 @@ minima:
 # 可选：在 SEO/站点信息里展示邮箱（不想公开就留空或删除）
 email: "tongsh6@gmail.com"
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
-# 让链接更“博客化”，同时对 GitHub Pages 友好
+# WARNING: permalink contains :categories — changing a post's categories will break its URL.
+# If categories contain CJK characters, the URL will contain percent-encoded bytes.
+# Consider switching to /:year/:month/:day/:title/ in a future migration with proper redirects.
+# 让链接更”博客化”，同时对 GitHub Pages 友好
 permalink: /:categories/:year/:month/:day/:title/
 
-paginate: 10
-paginate_path: '/page:num/'
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/page:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
