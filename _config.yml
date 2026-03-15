@@ -56,6 +56,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate-v2
 
+# WARNING: permalink contains :categories — changing a post's categories will break its URL.
+# If categories contain CJK characters, the URL will contain percent-encoded bytes.
+# Consider switching to /:year/:month/:day/:title/ in a future migration with proper redirects.
 # 让链接更”博客化”，同时对 GitHub Pages 友好
 permalink: /:categories/:year/:month/:day/:title/
 
