@@ -1,7 +1,9 @@
 <head>
+<!-- 覆盖 Minima 默认 head.html (2.5.1)，用途：注入主题初始化脚本防止 FOUC -->
+<!-- 升级 Minima 时需手动核对上游变更 -->
   <script>
     (function() {
-      var theme = 'dark';
+      var theme;
       try {
         theme = localStorage.getItem('theme') || 'dark';
       } catch (error) {

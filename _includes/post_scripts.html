@@ -74,6 +74,8 @@
     var container = document.querySelector('.giscus');
     if (container) {
       container.appendChild(script);
+    } else {
+      console.warn('Giscus: .giscus container not found, comment widget will not load');
     }
   })();
 </script>
