@@ -9,15 +9,31 @@
 // Premium Monochrome / Minimalist High-Tech Style (Vercel / Linear inspired)
 // -----------------------------------------------------------------------------
 
+// Dark theme palette (Zinc scale)
 $bg-color: #000000;         // Pure OLED Black
 $surface-color: #0A0A0A;    // Extremely dark grey for surfaces
-$border-color: #27272A;     // Subtle grey borders
+$border-color: #27272A;     // Subtle grey borders (Zinc-800)
 $text-primary: #EDEDED;     // Off-white for high contrast but low eye strain
-$text-secondary: #A1A1AA;   // Soft grey for secondary info
+$text-secondary: #A1A1AA;   // Soft grey for secondary info (Zinc-400)
 $accent-color: #E2E8F0;     // Crisp white for accents/hover
-$link-color: #71717A;       // Muted link color
+$link-color: #71717A;       // Muted link color (Zinc-500)
 $link-hover: #EDEDED;       // Brighten on hover
 $code-bg: #111111;
+
+// Light theme palette (Zinc scale)
+$light-bg: #FFFFFF;
+$light-surface: #FAFAFA;          // Zinc-50
+$light-surface-hover: #F4F4F5;    // Zinc-100
+$light-border: #E4E4E7;           // Zinc-200
+$light-border-strong: #D4D4D8;    // Zinc-300
+$light-text-primary: #09090B;     // Zinc-950
+$light-text-body: #27272A;        // Zinc-800
+$light-text-secondary: #52525B;   // Zinc-600
+$light-text-muted: #71717A;       // Zinc-500
+$light-text-faint: #A1A1AA;       // Zinc-400
+$light-link: #0070F3;
+$light-link-underline: #93C5FD;
+$light-code-bg: #F0F0F2;
 
 body {
   background-color: $bg-color;
@@ -31,14 +47,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
   font-weight: 600;
-  letter-spacing: -0.03em; // Tighter tracking for premium feel
+  letter-spacing: -0.03em;
   margin-top: 2em;
 }
 
 h1, .page-heading {
   font-weight: 700;
   letter-spacing: -0.04em;
-  // A very subtle metallic/white gradient instead of loud colors
   background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,7 +68,7 @@ a {
   text-decoration: none;
   transition: color 0.2s ease;
   border-bottom: 1px solid transparent;
-  
+
   &:hover {
     color: $link-hover;
   }
@@ -62,7 +77,7 @@ a {
 .post-content a {
   color: $text-primary;
   border-bottom: 1px solid #52525B;
-  
+
   &:hover {
     border-bottom-color: #FFFFFF;
   }
@@ -102,12 +117,11 @@ a {
     font-weight: 600;
     font-size: 1.25rem;
     letter-spacing: -0.02em;
-    // Remove gradient for a cleaner look
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
     margin-right: 20px;
-    
+
     &:hover {
       text-decoration: none;
       opacity: 0.8;
@@ -130,7 +144,7 @@ a {
     z-index: 101;
 
     @include media-query($on-palm) {
-      display: none; // Hide search on mobile header to save space
+      display: none;
     }
   }
 
@@ -141,22 +155,22 @@ a {
     position: relative;
     z-index: 102;
   }
-  
+
   .site-nav {
     float: none;
     line-height: inherit;
-    
+
     .trigger {
       display: flex;
       gap: 16px;
     }
   }
-  
+
   .page-link {
     color: $text-secondary;
     font-size: 0.9rem;
     font-weight: 500;
-    margin-left: 0; // Reset minima default
+    margin-left: 0;
     &:hover {
       color: #FFFFFF;
     }
@@ -177,14 +191,14 @@ a {
       border: 1px solid $border-color;
       border-radius: 8px;
       text-align: right;
-      
+
       .trigger {
         flex-direction: column;
         padding: 10px 20px;
         gap: 8px;
-        display: none; // Hidden by default on mobile unless nav-trigger is checked
+        display: none;
       }
-      
+
       .nav-trigger:checked ~ .trigger {
         display: flex;
       }
@@ -198,7 +212,7 @@ a {
   padding: 40px 0;
   margin-top: 80px;
   color: $text-secondary;
-  
+
   a {
     color: $text-secondary;
     &:hover {
@@ -207,7 +221,7 @@ a {
   }
 }
 
-// Post Lists (Clean, unboxed rows or very subtle cards)
+// Post Lists
 .post-list {
   padding: 0;
   list-style: none;
@@ -227,13 +241,13 @@ a {
     &:hover {
       transform: none;
       box-shadow: none;
-      
+
       .post-link {
         color: #FFFFFF;
-        padding-left: 8px; // Subtle indent on hover
+        padding-left: 8px;
       }
     }
-    
+
     .post-meta {
       color: $text-secondary;
       font-size: 0.85rem;
@@ -250,14 +264,14 @@ a {
       display: block;
       transition: padding 0.2s ease, color 0.2s ease;
       letter-spacing: -0.01em;
-      
+
       &:hover {
         background: none;
         -webkit-background-clip: unset;
         -webkit-text-fill-color: unset;
       }
     }
-    
+
     p {
       margin: 0;
       color: $text-secondary;
@@ -276,7 +290,6 @@ a {
     font-size: 1.05rem;
   }
 
-  // Blockquote styling (Refined and serious)
   blockquote {
     color: #A1A1AA;
     background: transparent;
@@ -285,17 +298,16 @@ a {
     font-size: 1.1rem;
     font-style: normal;
     margin: 32px 0;
-    
+
     p {
       color: #E4E4E7;
     }
-    
+
     p:last-child {
       margin-bottom: 0;
     }
   }
 
-  // Tables
   table {
     th {
       background-color: $surface-color;
@@ -315,7 +327,6 @@ a {
     }
   }
 
-  // Code Blocks
   pre, code {
     background-color: $code-bg !important;
     border: 1px solid $border-color !important;
@@ -324,7 +335,7 @@ a {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
     font-size: 0.9em !important;
   }
-  
+
   pre > code {
     padding: 0 !important;
     border: none !important;
@@ -362,24 +373,14 @@ a {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: $bg-color; 
+  background: $bg-color;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272A; 
+  background: #27272A;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #52525B;
-}
-
-html[data-theme="light"] ::-webkit-scrollbar-track {
-  background: #FAFAFA;
-}
-html[data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #D4D4D8;
-}
-html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
 }
 
 // -----------------------------------------------------------------------------
@@ -395,7 +396,6 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   margin: 0 auto;
 }
 
-// Limit the post width so it doesn't span the entire screen
 .post-wrapper > .post {
   flex: 1;
   min-width: 0;
@@ -403,7 +403,7 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
 }
 
 .post-sidebar {
-  display: none; // Hidden on mobile
+  display: none;
   flex-shrink: 0;
   width: 240px;
   position: sticky;
@@ -414,7 +414,7 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   padding-left: 20px;
 
   @media (min-width: 1024px) {
-    display: block; // Show on larger screens
+    display: block;
   }
 
   &::-webkit-scrollbar {
@@ -431,7 +431,6 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   margin-bottom: 16px;
 }
 
-// Overrides for tocbot base styles to match our premium dark theme
 .js-toc {
   font-size: 0.9rem;
   line-height: 1.6;
@@ -468,15 +467,15 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
 
   .is-collapsible {
     opacity: 1;
-    transition: opacity 300ms ease-in-out;
     overflow: hidden;
     transition: all 300ms ease-in-out;
   }
-  
+
   .is-collapsed {
     opacity: 0;
   }
 }
+
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
@@ -566,26 +565,6 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
   }
 }
 
-// Light theme adjustments
-html[data-theme="light"] .home-entry-card {
-  background: #FAFAFA;
-  border-color: #E4E4E7;
-
-  &:hover {
-    border-color: #D4D4D8;
-    background: #F4F4F5;
-  }
-
-  .entry-content h2 {
-    color: #09090B;
-  }
-
-  .entry-content p,
-  .entry-arrow {
-    color: #71717A;
-  }
-}
-
 // -----------------------------------------------------------------------------
 // Copy Code Button & Image Zoom Styles
 // -----------------------------------------------------------------------------
@@ -643,7 +622,7 @@ html[data-theme="light"] .home-entry-card {
   box-sizing: border-box;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #27272A;
+  border: 1px solid $border-color;
   border-radius: 20px;
   color: #EDEDED;
   font-size: 0.85rem;
@@ -652,7 +631,7 @@ html[data-theme="light"] .home-entry-card {
 }
 
 .search-input:focus {
-  border-color: #A1A1AA;
+  border-color: $text-secondary;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -662,7 +641,7 @@ html[data-theme="light"] .home-entry-card {
   left: 0;
   right: 0;
   background: #111111;
-  border: 1px solid #27272A;
+  border: 1px solid $border-color;
   border-radius: 8px;
   margin-top: 8px;
   padding: 0;
@@ -670,11 +649,11 @@ html[data-theme="light"] .home-entry-card {
   z-index: 100;
   max-height: 400px;
   overflow-y: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .search-results li {
-  border-bottom: 1px solid #27272A;
+  border-bottom: 1px solid $border-color;
 }
 
 .search-results li:last-child {
@@ -720,7 +699,7 @@ html[data-theme="light"] .home-entry-card {
 
 .pager {
   margin-top: 40px;
-  border-top: 1px solid #27272A;
+  border-top: 1px solid $border-color;
   padding-top: 30px;
 }
 
@@ -736,9 +715,9 @@ html[data-theme="light"] .home-entry-card {
 
 .pagination a {
   padding: 8px 16px;
-  border: 1px solid #27272A;
+  border: 1px solid $border-color;
   border-radius: 6px;
-  color: #A1A1AA;
+  color: $text-secondary;
   transition: all 0.2s ease;
 }
 
@@ -748,7 +727,7 @@ html[data-theme="light"] .home-entry-card {
 }
 
 .current-page {
-  color: #71717A;
+  color: $link-color;
   font-size: 0.9rem;
 }
 
@@ -772,251 +751,329 @@ html[data-theme="light"] .home-entry-card {
   background: rgba(255, 255, 255, 0.1);
 }
 
-html[data-theme="light"] .theme-toggle {
-  color: #18181B;
-}
-
-html[data-theme="light"] .theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.08);
-}
-
-// Light Theme Variables
-html[data-theme="light"] body {
-  background-color: #FFFFFF;
-  color: #18181B;
-}
-html[data-theme="light"] h1, 
-html[data-theme="light"] h2, 
-html[data-theme="light"] h3,
-html[data-theme="light"] h4 {
-  color: #09090B;
-}
-html[data-theme="light"] .site-header {
-  background: rgba(255, 255, 255, 0.8);
-  border-bottom-color: #E4E4E7;
-}
-html[data-theme="light"] .site-title {
-  color: #09090B;
-}
-html[data-theme="light"] .page-link {
-  color: #52525B;
-}
-html[data-theme="light"] .page-link:hover {
-  color: #09090B;
-}
-html[data-theme="light"] .post-link {
-  color: #09090B;
-}
-html[data-theme="light"] .post-list > li:hover .post-link {
-  color: #09090B;
-}
-html[data-theme="light"] .post-meta {
-  color: #71717A;
-}
-html[data-theme="light"] .post-content p,
-html[data-theme="light"] .post-content li,
-html[data-theme="light"] .post-content td {
-  color: #27272A;
-}
-html[data-theme="light"] .post-content blockquote {
-  color: #52525B;
-  border-left-color: #D4D4D8;
-}
-html[data-theme="light"] .post-content blockquote p {
-  color: #52525B;
-}
-html[data-theme="light"] .post-list > li {
-  border-bottom-color: #E4E4E7;
-}
-html[data-theme="light"] .search-input {
-  background: #F4F4F5;
-  border-color: #E4E4E7;
-  color: #09090B;
-}
-html[data-theme="light"] .search-results {
-  background: #FFFFFF;
-  border-color: #E4E4E7;
-}
-html[data-theme="light"] .search-results a {
-  color: #18181B;
-  border-bottom-color: #F4F4F5;
-}
-html[data-theme="light"] .search-results a:hover {
-  background: #F4F4F5;
-}
-html[data-theme="light"] pre,
-html[data-theme="light"] code {
-  background-color: #F0F0F2 !important;
-  border-color: #D4D4D8 !important;
-  color: #1E1E2E !important;
-}
-
-html[data-theme="light"] figure.highlight,
-html[data-theme="light"] .highlighter-rouge .highlight {
-  background-color: #F0F0F2 !important;
-  border-color: #D4D4D8 !important;
-}
-html[data-theme="light"] .copy-code-btn {
-  color: #52525B;
-  border-color: #D4D4D8;
-  background: #FFFFFF;
-}
-@media (hover: hover) {
-  html[data-theme="light"] .copy-code-btn:hover {
-    background: #F4F4F5;
-  }
-}
-html[data-theme="light"] .toc-link {
-  color: #71717A;
-}
-html[data-theme="light"] .is-active-link {
-  color: #09090B;
-}
-html[data-theme="light"] .pinned-post {
-  background: #FAFAFA !important;
-  border-color: #E4E4E7 !important;
-}
-html[data-theme="light"] .pinned-post .post-meta {
-  color: #09090B !important;
-}
-html[data-theme="light"] a {
-  color: #0070F3;
-}
-html[data-theme="light"] .search-result-date {
-  color: #71717A;
-}
-
 .post-updated {
   font-size: 0.9em;
   color: $text-secondary;
 }
 
-html[data-theme="light"] .post-updated {
-  color: #71717A;
+// =============================================================================
+// Light Theme Overrides (all gathered using SCSS nesting)
+// =============================================================================
+html[data-theme="light"] {
+  // Base
+  body {
+    background-color: $light-bg;
+    color: #18181B;
+  }
+
+  h1, h2, h3, h4 {
+    color: $light-text-primary;
+  }
+
+  h1, .page-heading {
+    background: linear-gradient(180deg, $light-text-primary 0%, $light-text-secondary 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  a {
+    color: $light-link;
+  }
+
+  // Header
+  .site-header {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom-color: $light-border;
+  }
+
+  .site-title {
+    color: $light-text-primary;
+  }
+
+  .page-link {
+    color: $light-text-secondary;
+  }
+
+  .page-link:hover {
+    color: $light-text-primary;
+  }
+
+  // Theme toggle
+  .theme-toggle {
+    color: #18181B;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  // Post list
+  .post-link {
+    color: $light-text-primary;
+  }
+
+  .post-list > li:hover .post-link {
+    color: $light-text-primary;
+  }
+
+  .post-meta {
+    color: $light-text-muted;
+  }
+
+  .post-list > li {
+    border-bottom-color: $light-border;
+  }
+
+  .post-list > li p {
+    color: $light-text-secondary;
+  }
+
+  // Post content
+  .post-content p,
+  .post-content li,
+  .post-content td {
+    color: $light-text-body;
+  }
+
+  .post-content blockquote {
+    color: $light-text-secondary;
+    border-left-color: $light-border-strong;
+  }
+
+  .post-content blockquote p {
+    color: $light-text-secondary;
+  }
+
+  .post-content a {
+    color: $light-link;
+    border-bottom-color: $light-link-underline;
+  }
+
+  .post-content a:hover {
+    border-bottom-color: $light-link;
+  }
+
+  // Tables
+  .post-content table th {
+    background-color: $light-surface-hover;
+    border-color: $light-border;
+    color: $light-text-primary;
+  }
+
+  .post-content table td {
+    border-color: $light-border;
+    color: $light-text-body;
+  }
+
+  .post-content table tr:hover {
+    background-color: #F9FAFB;
+  }
+
+  // Code blocks
+  pre, code {
+    background-color: $light-code-bg !important;
+    border-color: $light-border-strong !important;
+    color: #1E1E2E !important;
+  }
+
+  figure.highlight,
+  .highlighter-rouge .highlight {
+    background-color: $light-code-bg !important;
+    border-color: $light-border-strong !important;
+  }
+
+  .copy-code-btn {
+    color: $light-text-secondary;
+    border-color: $light-border-strong;
+    background: $light-bg;
+  }
+
+  // Search
+  .search-input {
+    background: $light-surface-hover;
+    border-color: $light-border;
+    color: $light-text-primary;
+  }
+
+  .search-input:focus {
+    border-color: $light-text-faint;
+    background: $light-bg;
+  }
+
+  .search-results {
+    background: $light-bg;
+    border-color: $light-border;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-results a {
+    color: #18181B;
+    border-bottom-color: $light-surface-hover;
+  }
+
+  .search-results a:hover {
+    background: $light-surface-hover;
+  }
+
+  .search-results li {
+    border-bottom-color: $light-surface-hover;
+  }
+
+  .search-result-date {
+    color: $light-text-muted;
+  }
+
+  // Pinned post
+  .pinned-post {
+    background: $light-surface !important;
+    border-color: $light-border !important;
+  }
+
+  .pinned-post .post-meta {
+    color: $light-text-primary !important;
+  }
+
+  // Footer
+  .site-footer {
+    border-top-color: $light-border;
+    color: $light-text-muted;
+  }
+
+  .site-footer a {
+    color: $light-text-muted;
+  }
+
+  .site-footer a:hover {
+    color: $light-text-primary;
+  }
+
+  // Home
+  .home-tagline {
+    color: $light-text-muted;
+  }
+
+  .home-entry-card {
+    background: $light-surface;
+    border-color: $light-border;
+
+    &:hover {
+      border-color: $light-border-strong;
+      background: $light-surface-hover;
+    }
+
+    .entry-content h2 {
+      color: $light-text-primary;
+    }
+
+    .entry-content p,
+    .entry-arrow {
+      color: $light-text-muted;
+    }
+  }
+
+  // TOC / Sidebar
+  .post-sidebar {
+    border-left-color: $light-border;
+  }
+
+  .toc-title {
+    color: $light-text-faint;
+  }
+
+  .toc-link {
+    color: $light-text-muted;
+  }
+
+  .is-active-link {
+    color: $light-text-primary;
+  }
+
+  // Pagination
+  .pager {
+    border-top-color: $light-border;
+  }
+
+  .pagination a {
+    border-color: $light-border;
+    color: $light-text-secondary;
+  }
+
+  .pagination a:hover {
+    border-color: $light-text-primary;
+    color: $light-text-primary;
+  }
+
+  .current-page {
+    color: $light-text-faint;
+  }
+
+  // Post updated
+  .post-updated {
+    color: $light-text-muted;
+  }
+
+  // Mobile nav dropdown
+  .site-nav .trigger {
+    background: $light-bg;
+    border-color: $light-border;
+  }
+
+  // Scrollbar (WebKit)
+  ::-webkit-scrollbar-track {
+    background: $light-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $light-border-strong;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $light-text-faint;
+  }
+
+  // Scrollbar (Firefox)
+  scrollbar-color: $light-border-strong $light-surface;
 }
 
-html[data-theme="light"] h1,
-html[data-theme="light"] .page-heading {
-  background: linear-gradient(180deg, #09090B 0%, #52525B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+// Firefox scrollbar for dark mode
+html:not([data-theme="light"]) {
+  scrollbar-color: #27272A $bg-color;
 }
 
-// Footer
-html[data-theme="light"] .site-footer {
-  border-top-color: #E4E4E7;
-  color: #71717A;
-}
-html[data-theme="light"] .site-footer a {
-  color: #71717A;
-}
-html[data-theme="light"] .site-footer a:hover {
-  color: #09090B;
-}
-
-// Post content links
-html[data-theme="light"] .post-content a {
-  color: #0070F3;
-  border-bottom-color: #93C5FD;
-}
-html[data-theme="light"] .post-content a:hover {
-  border-bottom-color: #0070F3;
-}
-
-// Post list summary text
-html[data-theme="light"] .post-list > li p {
-  color: #52525B;
-}
-
-// Table
-html[data-theme="light"] .post-content table th {
-  background-color: #F4F4F5;
-  border-color: #E4E4E7;
-  color: #09090B;
-}
-html[data-theme="light"] .post-content table td {
-  border-color: #E4E4E7;
-  color: #27272A;
-}
-html[data-theme="light"] .post-content table tr:hover {
-  background-color: #F9FAFB;
-}
-
-// Home tagline
-html[data-theme="light"] .home-tagline {
-  color: #71717A;
-}
-
-// Sidebar / TOC
-html[data-theme="light"] .post-sidebar {
-  border-left-color: #E4E4E7;
-}
-html[data-theme="light"] .toc-title {
-  color: #A1A1AA;
-}
-
-// Pagination
-html[data-theme="light"] .pager {
-  border-top-color: #E4E4E7;
-}
-html[data-theme="light"] .pagination a {
-  border-color: #E4E4E7;
-  color: #52525B;
-}
-html[data-theme="light"] .pagination a:hover {
-  border-color: #09090B;
-  color: #09090B;
-}
-html[data-theme="light"] .current-page {
-  color: #A1A1AA;
-}
-
-// Search results shadow
-html[data-theme="light"] .search-results {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-html[data-theme="light"] .search-results li {
-  border-bottom-color: #F4F4F5;
-}
-html[data-theme="light"] .search-input:focus {
-  border-color: #A1A1AA;
-  background: #FFFFFF;
-}
-
-// Mobile nav dropdown
-html[data-theme="light"] .site-nav .trigger {
-  background: #FFFFFF;
-  border-color: #E4E4E7;
+@media (hover: hover) {
+  html[data-theme="light"] .copy-code-btn:hover {
+    background: $light-surface-hover;
+  }
 }
 
 // Light mode syntax highlighting (GitHub Light inspired)
 html[data-theme="light"] .highlight {
   color: #24292e;
-  background-color: #F0F0F2 !important;
+  background-color: $light-code-bg !important;
 
-  .c, .cm, .cp, .c1, .cs { color: #6a737d; }  /* Comments */
-  .err { color: #cb2431; }                      /* Error */
-  .k, .kc, .kd, .kp, .kr, .kt { color: #d73a49; } /* Keywords */
-  .l, .m, .mf, .mh, .mi, .mo, .il { color: #005cc5; } /* Literals/Numbers */
-  .n, .nb, .ni, .ne, .nl, .nn, .py, .bp, .vc, .vg, .vi { color: #24292e; } /* Names */
-  .o, .ow { color: #d73a49; }                   /* Operators */
-  .p { color: #24292e; }                         /* Punctuation */
-  .s, .sb, .sc, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss { color: #032f62; } /* Strings */
-  .se { color: #005cc5; }                        /* String.Escape */
-  .ld { color: #032f62; }                        /* Literal.Date */
-  .na { color: #6f42c1; }                        /* Name.Attribute */
-  .nc, .nd, .ne, .nf, .nx { color: #6f42c1; }   /* Name.Class/Decorator/Function */
-  .no { color: #005cc5; }                        /* Name.Constant */
-  .nt { color: #22863a; }                        /* Name.Tag */
-  .nv { color: #e36209; }                        /* Name.Variable */
+  .c, .cm, .cp, .c1, .cs { color: #6a737d; }
+  .err { color: #cb2431; }
+  .k, .kc, .kd, .kp, .kr, .kt { color: #d73a49; }
+  .l, .m, .mf, .mh, .mi, .mo, .il { color: #005cc5; }
+  .n, .nb, .ni, .ne, .nl, .nn, .py, .bp, .vc, .vg, .vi { color: #24292e; }
+  .o, .ow { color: #d73a49; }
+  .p { color: #24292e; }
+  .s, .sb, .sc, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss { color: #032f62; }
+  .se { color: #005cc5; }
+  .ld { color: #032f62; }
+  .na { color: #6f42c1; }
+  .nc, .nd, .ne, .nf, .nx { color: #6f42c1; }
+  .no { color: #005cc5; }
+  .nt { color: #22863a; }
+  .nv { color: #e36209; }
   .ge { font-style: italic; }
   .gs { font-weight: bold; }
-  .w { color: #24292e; }                         /* Whitespace */
+  .w { color: #24292e; }
 }
 
 // -----------------------------------------------------------------------------
-// Mobile Navigation Button (replaces label[for="nav-trigger"] for accessibility)
+// Mobile Navigation Button
 // -----------------------------------------------------------------------------
 button.menu-icon {
   background: none;
@@ -1024,7 +1081,7 @@ button.menu-icon {
   cursor: pointer;
   padding: 0;
   color: inherit;
-  display: none; // 默认桌面端不显示（与 Minima 原 label 行为一致）
+  display: none;
 
   &:focus-visible {
     outline: 2px solid currentColor;
