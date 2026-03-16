@@ -78,8 +78,24 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    @include media-query($on-palm) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
 
   .site-title {
     color: #FFFFFF;
@@ -90,10 +106,43 @@ a {
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
+    margin-right: 20px;
     
     &:hover {
       text-decoration: none;
       opacity: 0.8;
+    }
+  }
+
+  .header-right-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .header-search {
+    flex: 0 1 300px;
+    max-width: 300px;
+    
+    @include media-query($on-palm) {
+      display: none; // Hide search on mobile header to save space
+    }
+  }
+
+  .header-theme-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-nav {
+    float: none;
+    line-height: inherit;
+    
+    .trigger {
+      display: flex;
+      gap: 16px;
     }
   }
   
@@ -101,8 +150,38 @@ a {
     color: $text-secondary;
     font-size: 0.9rem;
     font-weight: 500;
+    margin-left: 0; // Reset minima default
     &:hover {
       color: #FFFFFF;
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .site-header {
+    .header-right-container {
+      gap: 8px;
+    }
+
+    .site-nav {
+      position: absolute;
+      top: 100%;
+      right: 15px;
+      background: $surface-color;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      text-align: right;
+      
+      .trigger {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 8px;
+        display: none; // Hidden by default on mobile unless nav-trigger is checked
+      }
+      
+      .nav-trigger:checked ~ .trigger {
+        display: flex;
+      }
     }
   }
 }
@@ -438,18 +517,21 @@ a {
 // -----------------------------------------------------------------------------
 .search-container {
   position: relative;
-  max-width: 600px;
-  margin-bottom: 40px;
+  width: 100%;
+}
+
+.header-search .search-container {
+  margin-bottom: 0;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 8px 16px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #27272A;
-  border-radius: 8px;
+  border-radius: 20px;
   color: #EDEDED;
-  font-size: 1rem;
+  font-size: 0.85rem;
   transition: all 0.2s ease;
   outline: none;
 }

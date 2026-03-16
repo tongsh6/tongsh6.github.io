@@ -1,30 +1,45 @@
 <!-- Search Widget -->
 <div class="search-container" {% if include.style %}style="{{ include.style }}"{% endif %}>
   <label for="search-input" class="sr-only">搜索文章</label>
-  <input type="text" id="search-input" placeholder="搜索文章标题或内容..." class="search-input">
+  <input type="text" id="search-input" placeholder="搜索文章..." class="search-input">
   <ul id="results-container" class="search-results"></ul>
 </div>
 
 {% if include.variant == "home" %}
   {% assign search_result_template = '<li><a href="{url}"><span class="search-result-title">{title}</span><span class="search-result-date">{date}</span></a></li>' %}
 {% else %}
-  {% assign search_result_template = '<li><a href="{url}">{title}</a></li>' %}
+  {% assign search_result_template = '<li><a href="{url}"><span class="search-result-title">{title}</span><span class="search-result-date">{date}</span></a></li>' %}
 {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"
-        integrity="sha256-jL0uP6XOIL51TNq/iPNgR1D8AJuMzJCV0sVsLxke2Zk="
-        crossorigin="anonymous"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '{{ "/search.json" | relative_url }}',
-      searchResultTemplate: {{ search_result_template | jsonify }},
-      noResultsText: '<li class="no-results">没有找到相关文章...</li>',
-      limit: {{ include.limit | default: 10 }},
-      fuzzy: true,
-      exclude: []
-    })
-  });
+  (function() {
+    function initSearch() {
+      if (typeof SimpleJekyllSearch === 'undefined') {
+        setTimeout(initSearch, 100);
+        return;
+      }
+      
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (!searchInput || !resultsContainer) return;
+
+      SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: resultsContainer,
+        json: '{{ "/search.json" | relative_url }}',
+        searchResultTemplate: {{ search_result_template | jsonify }},
+        noResultsText: '<li class="no-results">没有找到相关文章...</li>',
+        limit: {{ include.limit | default: 10 }},
+        fuzzy: true,
+        exclude: []
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSearch);
+    } else {
+      initSearch();
+    }
+  })();
 </script>
