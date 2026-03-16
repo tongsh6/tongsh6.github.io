@@ -472,6 +472,98 @@ a {
   margin: 0 auto;
 }
 
+// Home entry cards
+.home-intro {
+  text-align: center;
+  margin: 40px 0 60px;
+}
+
+.home-tagline {
+  font-size: 1.25rem;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.home-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-entry-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: $surface-color;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #3F3F46;
+    background: rgba(255, 255, 255, 0.03);
+
+    .entry-arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  .entry-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .entry-content {
+    flex: 1;
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $text-primary;
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: $text-secondary;
+    }
+  }
+
+  .entry-arrow {
+    font-size: 1.25rem;
+    color: $text-secondary;
+    transition: transform 0.2s ease;
+  }
+}
+
+// Light theme adjustments
+html[data-theme="light"] .home-entry-card {
+  background: #FAFAFA;
+  border-color: #E4E4E7;
+
+  &:hover {
+    border-color: #D4D4D8;
+    background: #F4F4F5;
+  }
+
+  .entry-content h2 {
+    color: #09090B;
+  }
+
+  .entry-content p,
+  .entry-arrow {
+    color: #71717A;
+  }
+}
+
 // -----------------------------------------------------------------------------
 // Copy Code Button & Image Zoom Styles
 // -----------------------------------------------------------------------------

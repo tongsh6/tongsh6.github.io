@@ -1,17 +1,28 @@
 ---
-layout: home
+layout: default
 title: 首页
-pagination:
-  enabled: true
 ---
 
-欢迎来到我的博客，我是 **Tongsh6**。
+<div class="home-intro">
+  <p class="home-tagline">记录技术、项目与生活的可复用笔记</p>
+</div>
 
-这里主要记录与分享：
+<div class="home-entries">
+  <a href="/costruct/" class="home-entry-card costruct-card">
+    <div class="entry-icon">⚡</div>
+    <div class="entry-content">
+      <h2>CoStruct</h2>
+      <p>人机协作方法论项目</p>
+    </div>
+    <span class="entry-arrow">→</span>
+  </a>
 
-- 技术学习与踩坑总结
-- 项目笔记与复盘
-- 读书/生活随记（随缘）
-
-欢迎来到我的博客！这里记录技术思考与项目实践。
-可通过顶部导航浏览分类与标签，或订阅 [RSS]({{ "/feed.xml" | relative_url }}) 获取更新。
+  <a href="/posts/" class="home-entry-card articles-card">
+    <div class="entry-icon">📝</div>
+    <div class="entry-content">
+      <h2>全部文章</h2>
+      <p>浏览 {{ site.posts.size }} 篇技术笔记与实践记录</p>
+    </div>
+    <span class="entry-arrow">→</span>
+  </a>
+</div>
