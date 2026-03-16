@@ -792,6 +792,9 @@ html[data-theme="light"] .page-link:hover {
 html[data-theme="light"] .post-link {
   color: #09090B;
 }
+html[data-theme="light"] .post-list > li:hover .post-link {
+  color: #09090B;
+}
 html[data-theme="light"] .post-meta {
   color: #71717A;
 }
