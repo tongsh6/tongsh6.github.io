@@ -9,8 +9,6 @@ layout: default
 
   {{ content | markdownify }}
 
-  {% include search-widget.html style="margin-bottom: 30px;" variant="home" limit=20 %}
-
   {% if site.pagination.enabled %}
     {% assign posts = paginator.posts %}
   {% else %}
