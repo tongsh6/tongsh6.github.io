@@ -370,7 +370,17 @@ a {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525B; 
+  background: #52525B;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
 }
 
 // -----------------------------------------------------------------------------
@@ -892,6 +902,93 @@ html[data-theme="light"] .page-heading {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+// Footer
+html[data-theme="light"] .site-footer {
+  border-top-color: #E4E4E7;
+  color: #71717A;
+}
+html[data-theme="light"] .site-footer a {
+  color: #71717A;
+}
+html[data-theme="light"] .site-footer a:hover {
+  color: #09090B;
+}
+
+// Post content links
+html[data-theme="light"] .post-content a {
+  color: #0070F3;
+  border-bottom-color: #93C5FD;
+}
+html[data-theme="light"] .post-content a:hover {
+  border-bottom-color: #0070F3;
+}
+
+// Post list summary text
+html[data-theme="light"] .post-list > li p {
+  color: #52525B;
+}
+
+// Table
+html[data-theme="light"] .post-content table th {
+  background-color: #F4F4F5;
+  border-color: #E4E4E7;
+  color: #09090B;
+}
+html[data-theme="light"] .post-content table td {
+  border-color: #E4E4E7;
+  color: #27272A;
+}
+html[data-theme="light"] .post-content table tr:hover {
+  background-color: #F9FAFB;
+}
+
+// Home tagline
+html[data-theme="light"] .home-tagline {
+  color: #71717A;
+}
+
+// Sidebar / TOC
+html[data-theme="light"] .post-sidebar {
+  border-left-color: #E4E4E7;
+}
+html[data-theme="light"] .toc-title {
+  color: #A1A1AA;
+}
+
+// Pagination
+html[data-theme="light"] .pager {
+  border-top-color: #E4E4E7;
+}
+html[data-theme="light"] .pagination a {
+  border-color: #E4E4E7;
+  color: #52525B;
+}
+html[data-theme="light"] .pagination a:hover {
+  border-color: #09090B;
+  color: #09090B;
+}
+html[data-theme="light"] .current-page {
+  color: #A1A1AA;
+}
+
+// Search results shadow
+html[data-theme="light"] .search-results {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+html[data-theme="light"] .search-results li {
+  border-bottom-color: #F4F4F5;
+}
+html[data-theme="light"] .search-input:focus {
+  border-color: #A1A1AA;
+  background: #FFFFFF;
+}
+
+// Mobile nav dropdown
+html[data-theme="light"] .site-nav .trigger {
+  background: #FFFFFF;
+  border-color: #E4E4E7;
 }
 
 // Light mode syntax highlighting (GitHub Light inspired)
