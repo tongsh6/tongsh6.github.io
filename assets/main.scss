@@ -578,6 +578,8 @@ a {
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
   transition: all 0.2s ease;
   opacity: 1;
@@ -650,6 +652,11 @@ a {
   max-height: 400px;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  &:empty {
+    display: none;
+    border: none;
+  }
 }
 
 .search-results li {

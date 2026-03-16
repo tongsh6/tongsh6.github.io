@@ -27,12 +27,17 @@
       // Add the button to the parent figure (or wrapper)
       var wrapper = block.parentElement;
       // Make sure the wrapper is relatively positioned
-      if(wrapper.tagName.toLowerCase() === 'figure') {
+      if (wrapper && wrapper.tagName.toLowerCase() === 'figure') {
         wrapper.style.position = 'relative';
         wrapper.appendChild(button);
       } else {
-        block.style.position = 'relative';
-        block.appendChild(button);
+        // Create a wrapper div if figure is not present
+        var newWrapper = document.createElement('div');
+        newWrapper.style.position = 'relative';
+        // Insert wrapper before block, then move block into wrapper
+        block.parentNode.insertBefore(newWrapper, block);
+        newWrapper.appendChild(block);
+        newWrapper.appendChild(button);
       }
 
       button.addEventListener('click', function() {
