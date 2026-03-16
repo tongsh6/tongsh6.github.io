@@ -128,7 +128,6 @@ a {
     min-width: 0;
     position: relative;
     z-index: 101;
-    overflow: hidden;
 
     @include media-query($on-palm) {
       display: none; // Hide search on mobile header to save space
