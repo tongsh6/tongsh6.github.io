@@ -123,11 +123,12 @@ a {
   }
 
   .header-search {
-    flex: 0 1 300px;
-    max-width: 300px;
+    flex: 0 1 250px;
+    max-width: 250px;
     min-width: 0;
     position: relative;
     z-index: 101;
+    overflow: hidden;
 
     @include media-query($on-palm) {
       display: none; // Hide search on mobile header to save space
@@ -624,6 +625,7 @@ html[data-theme="light"] .home-entry-card {
 
 .search-input {
   width: 100%;
+  box-sizing: border-box;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #27272A;
