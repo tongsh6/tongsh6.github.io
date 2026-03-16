@@ -338,17 +338,23 @@ a {
     border: 1px solid $border-color !important;
     border-radius: 8px !important;
     margin-bottom: 1.5em !important;
-    
+    position: relative;
+
     pre {
       margin: 0 !important;
       border: none !important;
-      padding: 16px !important;
+      padding: 16px 60px 16px 16px !important;
     }
   }
 }
 
 .highlighter-rouge .highlight {
   background: #111111 !important;
+  position: relative;
+}
+
+.highlighter-rouge pre {
+  padding-right: 60px !important;
 }
 
 // Scrollbar
@@ -797,6 +803,18 @@ html[data-theme="light"] .post-list > li:hover .post-link {
 }
 html[data-theme="light"] .post-meta {
   color: #71717A;
+}
+html[data-theme="light"] .post-content p,
+html[data-theme="light"] .post-content li,
+html[data-theme="light"] .post-content td {
+  color: #27272A;
+}
+html[data-theme="light"] .post-content blockquote {
+  color: #52525B;
+  border-left-color: #D4D4D8;
+}
+html[data-theme="light"] .post-content blockquote p {
+  color: #52525B;
 }
 html[data-theme="light"] .post-list > li {
   border-bottom-color: #E4E4E7;
