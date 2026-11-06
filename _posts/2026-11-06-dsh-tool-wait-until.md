@@ -3,7 +3,7 @@ layout: post
 title: "我给 DSH 写了个插件，专治 AI「空等」：Mac/Win 双环境实测安装前后的效率变化"
 date: 2026-11-06 17:00:00 +0800
 categories: [技术, 项目]
-tags: ["DSH", "DeepSeek Harness", "DSH 插件", "wait_until", "事件驱动", "DSH 等待", "卡住检测", "AI Agent"]
+tags: ["DSH", "DeepSeek Harness", "插件", "wait_until", "事件驱动", "等待", "卡住检测", "AI Agent"]
 ---
 
 > 让 Agent 跑后台任务、等队友、等文件、等日志，是 DeepSeek Harness（dsh）里最常见的场景，也是最容易「白等」的场景。我写了个叫 `wait_until` 的小插件，在 macOS 和 Windows 两个环境都装上用了。这篇文章用实测数据讲清楚：安装前 Agent 是怎么空等的，安装后到底变快了多少。
