@@ -27,4 +27,9 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+  {%- if site.vercount -%}
+  <!-- 阅读量统计：Vercount（不蒜子替代方案，https://vercount.one），纯前端计数 -->
+  <link rel="preconnect" href="https://events.vercount.one" crossorigin>
+  <script defer src="https://events.vercount.one/js"></script>
+  {%- endif -%}
 </head>

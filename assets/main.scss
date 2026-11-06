@@ -221,6 +221,29 @@ a {
   }
 }
 
+// 阅读量统计（Vercount）
+.post-views {
+  white-space: nowrap;
+
+  [id^="vercount_"] {
+    color: $text-primary;
+    font-weight: 500;
+  }
+}
+
+.site-footer .footer-views {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: $text-secondary;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.02em;
+
+  [id^="vercount_"] {
+    color: $text-primary;
+    font-weight: 500;
+  }
+}
+
 // Post Lists
 .post-list {
   padding: 0;
@@ -825,6 +848,15 @@ html[data-theme="light"] {
   }
 
   .post-meta {
+    color: $light-text-muted;
+  }
+
+  .post-views [id^="vercount_"],
+  .site-footer .footer-views [id^="vercount_"] {
+    color: $light-text-primary;
+  }
+
+  .site-footer .footer-views {
     color: $light-text-muted;
   }
 

@@ -1,0 +1,43 @@
+<!-- 覆盖 Minima 默认 footer.html (2.5.1)，用途：页脚展示站点总访问量/访客数（Vercount） -->
+<!-- 升级 Minima 时需手动核对上游变更 -->
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+      </div>
+    </div>
+
+    {%- if site.vercount -%}
+    <div class="footer-views">
+      本站总访问量 <span id="vercount_value_site_pv">…</span> 次 · 总访客 <span id="vercount_value_site_uv">…</span> 人
+    </div>
+    {%- endif -%}
+
+  </div>
+
+</footer>
