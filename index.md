@@ -1,19 +1,28 @@
 ---
-layout: home
+layout: default
 title: 首页
 ---
 
-欢迎来到我的博客，我是 **Tongsh6**。
+<div class="home-intro">
+  <p class="home-tagline">记录技术、项目与生活的可复用笔记</p>
+</div>
 
-这里主要记录与分享：
+<div class="home-entries">
+  <a href="/posts/" class="home-entry-card articles-card">
+    <div class="entry-icon">📝</div>
+    <div class="entry-content">
+      <h2>全部文章</h2>
+      <p>浏览 {{ site.posts.size }} 篇技术笔记与实践记录</p>
+    </div>
+    <span class="entry-arrow">→</span>
+  </a>
+  <a href="/costruct/" class="home-entry-card costruct-card">
+    <div class="entry-icon">⚡</div>
+    <div class="entry-content">
+      <h2>CoStruct</h2>
+      <p>人机协作方法论项目</p>
+    </div>
+    <span class="entry-arrow">→</span>
+  </a>
 
-- 技术学习与踩坑总结
-- 项目笔记与复盘
-- 读书/生活随记（随缘）
-
-你可以从这些入口开始逛：
-
-- [关于我]({{ "/about/" | relative_url }})
-- [CoStruct]({{ "/costruct/" | relative_url }})
-- [分类]({{ "/categories/" | relative_url }}) / [标签]({{ "/tags/" | relative_url }})
-- [RSS 订阅]({{ "/feed.xml" | relative_url }})
+</div>

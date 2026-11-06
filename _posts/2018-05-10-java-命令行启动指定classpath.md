@@ -21,5 +21,3 @@ java -classpath ".;./lib/*" xxx.xxx.xxx.MainClass
  “.” 指当前目录
 
 该命令适用于，jar包中的MANIFEST.MF未指定MainClass
-
-[我的博客](https://blog.tongshuanglong.com)

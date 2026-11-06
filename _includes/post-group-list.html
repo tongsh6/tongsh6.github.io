@@ -1,0 +1,9 @@
+{% assign sorted_groups = include.groups | sort %}
+{% for group in sorted_groups %}
+## {{ group[0] }}（{{ group[1].size }}）
+
+{% for post in group[1] %}
+- {{ post.date | date: "%Y-%m-%d" }} · [{{ post.title }}]({{ post.url | relative_url }})
+{% endfor %}
+
+{% endfor %}

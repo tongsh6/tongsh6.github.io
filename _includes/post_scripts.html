@@ -1,0 +1,86 @@
+<!-- Medium Zoom Script for Image Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha384-Fbpr+9mGkCdAm4iWAHAVMjIcoqfHsExatT6uWiHh4dBoIh/4QiR8f4ZAji9TdIt/" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize medium-zoom on all images within post-content
+    const images = Array.from(document.querySelectorAll('.post-content img'));
+    const zoom = mediumZoom(images, {
+      margin: 24,
+      background: 'rgba(0, 0, 0, 0.9)',
+      scrollOffset: 0,
+    });
+  });
+</script>
+
+<!-- Copy Code Button Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all pre elements
+    var blocks = document.querySelectorAll('pre.highlight');
+    
+    blocks.forEach(function(block) {
+      // Create a button
+      var button = document.createElement('button');
+      button.className = 'copy-code-btn';
+      button.innerText = 'Copy';
+      
+      // Add the button to the parent figure (or wrapper)
+      var wrapper = block.parentElement;
+      // Make sure the wrapper is relatively positioned
+      if (wrapper && wrapper.tagName.toLowerCase() === 'figure') {
+        wrapper.style.position = 'relative';
+        wrapper.appendChild(button);
+      } else {
+        // Create a wrapper div if figure is not present
+        var newWrapper = document.createElement('div');
+        newWrapper.style.position = 'relative';
+        // Insert wrapper before block, then move block into wrapper
+        block.parentNode.insertBefore(newWrapper, block);
+        newWrapper.appendChild(block);
+        newWrapper.appendChild(button);
+      }
+
+      button.addEventListener('click', function() {
+        var code = block.querySelector('code');
+        var text = code ? code.innerText : block.innerText;
+        
+        navigator.clipboard.writeText(text).then(function() {
+          button.innerText = 'Copied!';
+          setTimeout(function() {
+            button.innerText = 'Copy';
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy text: ', err);
+          button.innerText = 'Failed';
+        });
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var theme = document.documentElement.dataset.theme || 'dark';
+    var script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'tongsh6/tongsh6.github.io');
+    script.setAttribute('data-repo-id', 'R_kgDON7uXSA');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDON7uXSM4Cm-W2');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', theme);
+    script.setAttribute('data-lang', 'zh-CN');
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+    var container = document.querySelector('.giscus');
+    if (container) {
+      container.appendChild(script);
+    } else {
+      console.warn('Giscus: .giscus container not found, comment widget will not load');
+    }
+  });
+</script>

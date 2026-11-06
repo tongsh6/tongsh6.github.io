@@ -1,0 +1,83 @@
+---
+layout: default
+title: 全部文章
+pagination:
+  enabled: true
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {% if site.pagination.enabled %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+    <ul class="post-list">
+      
+      <!-- Pinned Posts First (only on page 1) -->
+      {%- if site.pagination.enabled == false or paginator.page == 1 -%}
+      {%- for post in site.posts -%}
+        {%- if post.pinned -%}
+          <li class="pinned-post">
+            <span class="post-meta">📌 置顶 &bull; {{ post.date | date: "%Y-%m-%d" }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {%- if site.minima.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- endif -%}
+
+      <!-- Regular Posts (excluding pinned to avoid duplication on page 1) -->
+      {%- for post in posts -%}
+        {%- unless post.pinned -%}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {%- if site.minima.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+
+    {% if site.pagination.enabled %}
+      <div class="pager">
+        <ul class="pagination">
+        {%- if paginator.previous_page %}
+          <li>
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}">
+              &laquo; 上一页
+            </a>
+          </li>
+        {%- endif %}
+          
+          <li><span class="current-page">第 {{ paginator.page }} 页 / 共 {{ paginator.total_pages }} 页</span></li>
+          
+        {%- if paginator.next_page %}
+          <li>
+            <a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}">
+              下一页 &raquo;
+            </a>
+          </li>
+        {%- endif %}
+        </ul>
+      </div>
+    {%- endif %}
+  {%- endif -%}
+</div>
