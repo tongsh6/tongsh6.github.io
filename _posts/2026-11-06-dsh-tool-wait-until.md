@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "我给 DSH 写了个插件，专治 AI「空等」：Mac/Win 双环境实测安装前后的效率变化"
-date: 2026-11-06 17:00:00 +0800
+date: 2026-11-06 10:00:00 +0800
 categories: [技术, 项目]
 tags: ["DSH", "DeepSeek Harness", "插件", "wait_until", "事件驱动", "等待", "卡住检测", "AI Agent"]
 ---
