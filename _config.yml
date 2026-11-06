@@ -48,6 +48,10 @@ minima:
 # 可选：在 SEO/站点信息里展示邮箱（不想公开就留空或删除）
 email: "tongsh6@gmail.com"
 
+# 文章阅读量统计（Vercount：https://vercount.one，不蒜子的现代化替代）
+# 关闭统计显示时改为 false
+vercount: true
+
 markdown: kramdown
 kramdown:
   input: GFM
