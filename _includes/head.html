@@ -29,7 +29,10 @@
   {%- endif -%}
   {%- if site.vercount -%}
   <!-- 阅读量统计：Vercount（不蒜子替代方案，https://vercount.one），纯前端计数 -->
+  <!-- 脚本已本地化到 assets/js/vercount.js：events.vercount.one 在国内直连常需 5-15s 甚至超时，
+       远程加载脚本会拖慢首屏且偶发失败。本地副本仅把请求超时 5s 放宽为 25s，其余逻辑与上游一致。
+       ⚠️ 上游脚本更新时需手动重新下载 https://events.vercount.one/js 并重新应用该超时修改。 -->
   <link rel="preconnect" href="https://events.vercount.one" crossorigin>
-  <script defer src="https://events.vercount.one/js"></script>
+  <script defer src="{{ '/assets/js/vercount.js' | relative_url }}"></script>
   {%- endif -%}
 </head>
